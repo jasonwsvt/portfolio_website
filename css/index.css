@@ -46,12 +46,29 @@ body.fade-out {
 	transition: none;
 }
 
-#content .overflow-auto {
-	max-height: 60vh;
+@media screen and (max-width: 1200px) {
+	#content .overflow-auto {
+		max-height: 60vh;
+    	/*max-height: calc(100% - 15vw - 70px);*/
+	}
+	#pills-portfolio .overflow-auto {
+		max-height: 50vh;
+		/*Calc just doesn't seem to want to work.
+		/*max-height: calc(100% - 15vw - 110px)*/
+		/*max-height: calc(100% - 15vw - 80px - 5vh);*/
+	}
 }
-
-#pills-portfolio .overflow-auto {
-	max-height: 50vh;
+@media screen and (min-width: 1201px) {
+	#content .overflow-auto {
+		max-height: 60vh;
+    	/*max-height: calc(100% - 180px - 70px);*/
+	}
+	#pills-portfolio .overflow-auto {
+		max-height: 50vh;
+		/*Calc just doesn't seem to want to work.
+		/*max-height: calc(100% - 15vw - 110px)*/
+		/*max-height: calc(100% - 15vw - 80px - 5vh);*/
+	}
 }
 
 /*
