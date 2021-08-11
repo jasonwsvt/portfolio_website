@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  		<meta charset="utf-8">
+  		<title>Slideshow of Images of Monita</title>
+	  	<script src="js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div>
+			<h1>Pictures of Monita</h1>
+			<span>Autoscroll duration:</span>
+			<input id = 'adjust' type="range" min="0" max="30" value="0" class="slider" id="myRange"></input>
+			<span>Seconds until autoscroll:</span>
+			<span id = 'timer'><i>Disabled</i></span>
+		</div>
+
+  		<!-- The dots/circles -->
+		<div id='dots' style="text-align:center">
+		</div>
+
+		<!-- Slideshow container -->
+		<div id='slides' class="slideshow-container">
+			<!-- Next and previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+  		</div>
+  		<br>
+  
+	</body>
+</html>
