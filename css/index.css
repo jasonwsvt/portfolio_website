@@ -164,7 +164,7 @@ button.nav-link.active {
 	background: rgba(0, 0, 0, .2);
 }
 @media screen and (min-width: 768px) {
-	#pills-about, #pills-cv {
+	#pills-about, #pills-experience {
 		max-width: 670px;
 		margin: auto auto !important;
 	}
