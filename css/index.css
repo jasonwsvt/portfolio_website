@@ -7,6 +7,9 @@ html {
 	}
 }
 
+p:last-of-type {
+	margin-bottom: 0;
+}
 /* Works on Firefox */
 * {
 	scrollbar-width: 5px;
@@ -48,11 +51,11 @@ body.fade-out {
 
 @media screen and (max-width: 1200px) {
 	#content .overflow-auto {
-		max-height: 60vh;
+		max-height: 61vh;
     	/*max-height: calc(100% - 15vw - 70px);*/
 	}
 	#pills-portfolio .overflow-auto {
-		max-height: 50vh;
+		max-height: 51vh;
 		/*Calc just doesn't seem to want to work.
 		/*max-height: calc(100% - 15vw - 110px)*/
 		/*max-height: calc(100% - 15vw - 80px - 5vh);*/
@@ -60,11 +63,11 @@ body.fade-out {
 }
 @media screen and (min-width: 1201px) {
 	#content .overflow-auto {
-		max-height: 60vh;
+		max-height: 61vh;
     	/*max-height: calc(100% - 180px - 70px);*/
 	}
 	#pills-portfolio .overflow-auto {
-		max-height: 50vh;
+		max-height: 51vh;
 		/*Calc just doesn't seem to want to work.
 		/*max-height: calc(100% - 15vw - 110px)*/
 		/*max-height: calc(100% - 15vw - 80px - 5vh);*/
