@@ -173,6 +173,14 @@ button.nav-link.active {
 	}
 }
 
+#content {
+	height: 700px;
+}
+
+.tab-pane {
+	height: 100%;
+}
+
 #pills-experience li {
 	text-align: left;
 }
