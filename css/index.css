@@ -168,7 +168,7 @@ button.nav-link.active {
 }
 @media screen and (min-width: 768px) {
 	#pills-about, #pills-experience {
-		max-width: 670px;
+		max-width: 726px;
 		margin: auto auto !important;
 	}
 }
