@@ -149,7 +149,7 @@ button.nav-link.active {
 	margin: 0 auto;
 	float: none;
 	margin-bottom: 10px;
-	background: rgba(0, 0, 0, .2);
+	background: rgba(050, 050, 050, .3);
 }
 @media screen and (min-width: 850px) {
 	.card {
@@ -164,7 +164,7 @@ button.nav-link.active {
 
 #pills-about, #pills-experience {
 	padding: 1em;
-	background: rgba(0, 0, 0, .2);
+	background: rgba(050, 050, 050, .3);
 }
 @media screen and (min-width: 768px) {
 	#pills-about, #pills-experience {

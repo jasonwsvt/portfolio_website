@@ -3,52 +3,56 @@ var slideIndex = 1;
 //used to store the timeout
 var timer;
 
-//Array of images
-var images = [
-	"20190720_122528.jpg",
-	"20190811_172305.jpg",
-	"20190908_183433.jpg",
-	"20190910_174321.jpg",
-	"20190916_135952.jpg",
-	"20190918_091001.jpg",
-	"20190918_195938.jpg",
-	"20190919_153723.jpg",
-	"20190919_173542.jpg",
-	"20190922_081050.jpg",
-	"20190922_133853.jpg",
-	"20190922_161534.jpg",
-	"20191004_120909.jpg",
-	"20191020_123106.jpg",
-	"20191025_124340.jpg",
-	"20191025_142154.jpg",
-	"20191103_161406.jpg",
-	"20191110_110504.jpg",
-	"20191110_122450.jpg",
-	"20191212_120057.jpg",
-	"20200105_193554.jpg",
-	"20200106_081245.jpg",
-	"20200117_160228.jpg",
-	"20200211_083930.jpg",
-	"20200302_153639.jpg",
-	"20200306_143738.jpg",
-	"20200306_211930.jpg",
-	"20200307_091558.jpg",
-	"20200323_130241.jpg",
-	"20200622_140302.jpg",
-	"20201216_024631.jpg"
+//Array of images and text
+var data = [
+	{ image: "20190720_122528.jpg", text: "She's the one in the front." },
+	{ image: "20190811_172305.jpg", text: "This is the moment we really connected." },
+	{ image: "20190908_183433.jpg", text: "She loved sleeping on my bed." },
+	{ image: "20190910_174321.jpg", text: "Such a good little girl." },
+	{ image: "20190916_135952.jpg", text: "She used to be obsessed with those bones." },
+	{ image: "20190918_091001.jpg", text: "Are you sticking your tongue out at me?" },
+	{ image: "20190918_195938.jpg", text: "Auntie Lucesita's bag was really comfy." },
+	{ image: "20190919_153723.jpg", text: "A growing little girl gets in a nap anywhere she can." },
+	{ image: "20190919_173542.jpg", text: "Auntie Avalon had a really comfy pillow." },
+	{ image: "20190922_081050.jpg", text: "Such big feet you have." },
+	{ image: "20190922_133853.jpg", text: "Not much to do at Sushi Sundays except for sleeping." },
+	{ image: "20190922_161534.jpg", text: "Comfy spots are meant for naps." },
+	{ image: "20191004_120909.jpg", text: "Laying in the grass is still her favorite thing to do." },
+	{ image: "20191020_123106.jpg", text: "Even more sleeping at Sushi Sundays." },
+	{ image: "20191025_124340.jpg", text: "I had to promise she wouldn't set foot inside the ruins." },
+	{ image: "20191025_142154.jpg", text: "Hiking down the Inka trail between Chinchero and Urquillos." },
+	{ image: "20191103_161406.jpg", text: "Hanging out at Tantraya." },
+	{ image: "20191110_110504.jpg", text: "Outside Tarapoto, first time playing in the water." },
+	{ image: "20191110_122450.jpg", text: "Also outside Tarapoto, digging holes in the sand on the beach." },
+	{ image: "20191212_120057.jpg", text: "Getting used to her new crate at home in the United States." },
+	{ image: "20200105_193554.jpg", text: "Best place in the world in the Winter is right in front of the fire." },
+	{ image: "20200106_081245.jpg", text: "Cute little bat ears." },
+	{ image: "20200117_160228.jpg", text: "Don't you think that's a little too close, sweetheart?" },
+	{ image: "20200211_083930.jpg", text: "Teddy is now perfect." },
+	{ image: "20200302_153639.jpg", text: "Having fun in the snow." },
+	{ image: "20200306_143738.jpg", text: "Isn't it time to go on a run yet?" },
+	{ image: "20200306_211930.jpg", text: "Disco point." },
+	{ image: "20200307_091558.jpg", text: "Time to play." },
+	{ image: "20200323_130241.jpg", text: "Don't you think I look pretty in my new hedgehog hat?" },
+	{ image: "20200622_140302.jpg", text: "Lazy afternoon." },
+	{ image: "20201216_024631.jpg", text: "Was this your seat?" },
+	{ image: "20201225_170402.jpg", text: "New Christmas present." },
+	{ image: "20210520_150755.jpg", text: "Mid-run photo shoot." },
+	{ image: "20210828_021256.jpg", text: "Otter is my favorite pillow." },
+	{ image: "20211029_193130.jpg", text: "The beast in her natural environment." }
 ]
 
 //Creates a slide and dot for each of the images in the above array.
 function generateSlides() {
-	images.reverse().forEach((image, index) => {
-		var i = images.length - index
+	data.reverse().forEach(({ image, text }, index) => {
+		var i = data.length - index
 		var date = new Date(image.slice(0,4), image.slice(4,6)-1, image.slice(6,8), image.slice(9,11), image.slice(11,13), image.slice(13,15))
 		date = date.toString().split(" ").slice(0, 5).join(" ")
 		document.getElementById('slides').insertAdjacentHTML('afterBegin', 
-`		<div id="slide-${i}" class="mySlides fade">
-			<div class="numbertext">${i} / ${images.length}</div>
-			<img src="images/${image}">
-			<div class="text">${date}</div>
+`		<div id="slide-${i}" class="slides fade">
+			<div class="numbertext">${i} / ${data.length}</div>
+			<img src="images/${image}" alt="${date} - ${text}">
+			<div class="text">${date}<br>${text}</div>
 		</div>
 `)
 		document.getElementById('dots').insertAdjacentHTML('afterBegin',
@@ -60,7 +64,7 @@ function generateSlides() {
 //Switches the slideshow to the given slide
 function showSlide(n) {
 	var i;
-	var slides = document.getElementsByClassName("mySlides")
+	var slides = document.getElementsByClassName("slides")
 	var dots = document.getElementsByClassName("dot")
 
 	slideIndex = (n > slides.length) ? 1 : (n < 1) ? slides.length : n
